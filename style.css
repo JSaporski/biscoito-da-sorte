@@ -1,0 +1,190 @@
+/*** General Styles ***/
+:root {
+  font-size: 62.5%;
+
+  /** Colors **/
+  --dark-blue: hsl(238, 27%, 28%);
+  --light-cyan: hsl(198, 32%, 92%);
+  --orange: hsl(35, 100%, 50%);
+  --white: hsl(0, 100%, 100%);
+  --black: hsl(0, 0%, 0%);
+
+  /** Typography **/
+  --montserrat: 'Montserrat', sans-serif;
+  --dm-sans: 'DM Sans', sans-serif;
+  --dancing-script: 'Dancing Script', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font-size: 1.6rem;
+  background: linear-gradient(45deg, #190361 0%, #bb00ff 100%);
+}
+
+div.hide {
+  display: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/*** Main Content ***/
+
+#mainContent {
+  max-width: 42.8rem;
+  margin-inline: 2rem;
+  text-align: center;
+}
+
+#mainContent > div {
+  padding: 4.8rem 6.4rem;
+  background-color: var(--white);
+  box-shadow: 0 2rem 5rem 0 rgba(0, 0, 0, 0.8);
+  border-radius: 0.4rem;
+}
+
+#mainContent .luck h1,
+#mainContent .your-luck h2 {
+  margin-bottom: 1.4rem;
+  font-family: var(--montserrat);
+  font-size: 2.4rem;
+  color: var(--dark-blue);
+}
+
+#mainContent .your-luck h2 {
+  margin-bottom: 1.7rem;
+}
+
+#mainContent .luck p {
+  margin-bottom: 2rem;
+  font-family: var(--dm-sans);
+  font-size: 1.5rem;
+  color: var(--dark-blue);
+}
+
+#mainContent .your-luck p {
+  position: relative;
+  padding: 1rem;
+  font-family: var(--dancing-script);
+  font-size: 2.4rem;
+  color: var(--black);
+  background: var(--light-cyan);
+}
+
+#mainContent .your-luck:not(.hide) p {
+  animation: showInUp 1s ease-out;
+}
+
+#mainContent .luck img {
+  cursor: pointer;
+}
+
+#mainContent .luck img:hover {
+  animation: shake 0.8s ease-in infinite;
+}
+
+#mainContent .your-luck .btn-another-cookie {
+  margin-top: 1.7rem;
+  padding: 1.6rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--orange);
+  border: 0;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: filter 0.3s ease-out;
+}
+
+#mainContent .your-luck .btn-another-cookie:hover {
+  filter: brightness(0.9);
+}
+
+/*** Responsive ***/
+@media only screen and (max-width: 500px) {
+  #mainContent > div {
+    padding: 3.2rem;
+  }
+}
+
+/*** Animations ***/
+@keyframes shake {
+  0% {
+    transform: rotate(3deg);
+  }
+
+  5%,
+  55% {
+    transform: translateY(0.3rem);
+  }
+
+  10%,
+  60% {
+    transform: rotate(-3deg);
+  }
+
+  15%,
+  65% {
+    transform: translateY(-0.3rem);
+  }
+
+  20%,
+  70% {
+    transform: translateY(0.3rem);
+  }
+
+  25%,
+  75% {
+    transform: rotate(2deg);
+  }
+
+  30%,
+  80% {
+    transform: rotate(-3deg);
+  }
+
+  35%,
+  85% {
+    transform: translateY(0.2rem);
+  }
+
+  40%,
+  90% {
+    transform: rotate(-2deg);
+  }
+
+  45%,
+  95% {
+    transform: rotate(3deg);
+  }
+
+  50%,
+  100% {
+    transform: translateY(0.3rem);
+  }
+}
+
+@keyframes showInUp {
+  0% {
+    bottom: -10rem;
+    transform: scale(0.2);
+    opacity: 0.5;
+  }
+
+  100% {
+    bottom: 0rem;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
