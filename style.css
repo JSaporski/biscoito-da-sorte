@@ -93,6 +93,11 @@ img {
   animation: shake 0.8s ease-in infinite;
 }
 
+#mainContent .luck button {
+  border: none;
+  background-color: transparent;
+}
+
 #mainContent .your-luck .btn-another-cookie {
   margin-top: 1.7rem;
   padding: 1.6rem;
