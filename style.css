@@ -73,7 +73,6 @@ img {
 }
 
 #mainContent .your-luck p {
-  position: relative;
   padding: 1rem;
   font-family: var(--dancing-script);
   font-size: 2.4rem;
@@ -182,14 +181,12 @@ img {
 
 @keyframes showInUp {
   0% {
-    bottom: -10rem;
-    transform: scale(0.2);
+    transform: translateY(10rem) scale(0.2);
     opacity: 0.5;
   }
 
   100% {
-    bottom: 0rem;
-    transform: scale(1);
+    transform: translateY(0rem) scale(1);
     opacity: 1;
   }
 }
